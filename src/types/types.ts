@@ -1,19 +1,11 @@
+
+
 export interface IBook {
   title: string;
-  subtitle: string;
   author: string;
-  genre: string;
+  genre: "FICTION" | "NON_FICTION" | "SCIENCE" | "HISTORY" | "BIOGRAPHY" | "FANTASY";
   isbn: string;
+  description?: string;
   copies: number;
-  status: 'Available' | 'Unavailable'; 
-}
-
-export interface AddBookFormInputs {
-  bookTitle: string;
-  author: string;
-  genre: string;
-  publishYear: number;
-  isbn: string;
-  totalCopies: number;
-  description: string;
+  available: boolean;
 }

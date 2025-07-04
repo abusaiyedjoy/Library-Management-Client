@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { FaSearch, FaPlus } from "react-icons/fa";
 import BookTable from "../components/BookTable";
+import { Link } from "react-router";
 
 const Home = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -16,10 +17,10 @@ const Home = () => {
             Manage your library collection and track borrowing activity
           </p>
         </div>
-        <button className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
+        <Link to="/add-book" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
           <FaPlus size={14} />
           Add New Book
-        </button>
+        </Link>
       </div>
 
       <div className="flex justify-between items-center bg-white p-4 rounded-md shadow-sm flex-wrap gap-4">

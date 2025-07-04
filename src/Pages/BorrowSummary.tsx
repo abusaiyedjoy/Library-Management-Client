@@ -1,4 +1,3 @@
-import React from 'react';
 import { FaBook, FaCheckCircle, FaClock, FaRegBookmark } from 'react-icons/fa'; 
 
 const BorrowSummary = () => {
