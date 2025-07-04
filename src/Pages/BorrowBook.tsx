@@ -5,7 +5,7 @@ import toast from "react-hot-toast";
 import { useAddBookMutation } from "../redux/app/baseApi";
 import { useNavigate } from "react-router-dom";
 
-const AddBook = () => {
+const BorrowBook = () => {
   const [createBook, { isLoading }] = useAddBookMutation();
   const navigate = useNavigate();
   const {
@@ -188,4 +188,4 @@ const AddBook = () => {
   );
 };
 
-export default AddBook;
+export default BorrowBook;

@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav className="bg-white font-serif shadow-md px-6 py-5 flex justify-between items-center border-b border-gray-300">
+    <nav className="bg-white font-serif shadow-md px-6 py-5 flex flex-col md:flex-row gap-3 justify-between items-center border-b border-gray-300">
       <div className="flex items-center gap-2">
         <FaBookOpen className="text-blue-500 text-xl" />
         <span className="font-semibold text-xl text-gray-900 font-serif">Library Master</span>

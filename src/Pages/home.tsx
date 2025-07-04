@@ -10,20 +10,20 @@ const Home = () => {
 
   return (
     <div className="p-6 bg-gray-50 min-h-screen font-serif">
-      <div className="flex justify-between items-center mb-6">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-6">
         <div>
           <h1 className="text-2xl font-bold text-gray-900">Books Library</h1>
           <p className="text-gray-600">
             Manage your library collection and track borrowing activity
           </p>
         </div>
-        <Link to="/add-book" className="bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
+        <Link to="/add-book" className="bg-blue-500 w-[170px] hover:bg-blue-600 text-white px-4 py-2 rounded-md flex items-center gap-2 shadow-sm">
           <FaPlus size={14} />
           Add New Book
         </Link>
       </div>
 
-      <div className="flex justify-between items-center bg-white p-4 rounded-md shadow-sm flex-wrap gap-4">
+      <div className="flex flex-col md:flex-row justify-between items-center bg-white p-4 rounded-md shadow-sm flex-wrap gap-4">
         <div className="flex items-center border border-gray-200 rounded-md px-3 py-2 flex-1 max-w-md bg-gray-50">
           <FaSearch className="text-gray-400 mr-2" />
           <input

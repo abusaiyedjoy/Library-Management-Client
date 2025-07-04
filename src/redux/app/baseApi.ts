@@ -1,12 +1,14 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const baseApi = createApi({
-  reducerPath: 'baseApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/api/books' }),
+  reducerPath: "baseApi",
+  baseQuery: fetchBaseQuery({ baseUrl: "http://localhost:3000/api/books" }),
+  tagTypes: ["books", "edit-book"],
+
   endpoints: (builder) => ({
     getAllBooks: builder.query({
-        query: () => "/",
+      query: () => "/",
+      providesTags: ["books"],
     }),
     addBook: builder.mutation({
       query: (data) => ({
@@ -14,8 +16,34 @@ export const baseApi = createApi({
         method: "POST",
         body: data,
       }),
-    })
+      invalidatesTags: ["books"],
+    }),
+    updateBook: builder.mutation({
+      query: ({ id, body }) => ({
+        url: `/${id}`,
+        method: "PUT",
+        body,
+      }),
+      invalidatesTags: ["books", "edit-book"],
+    }),
+
+    deleteBook: builder.mutation({
+      query: (_id) => ({
+        url: `/${_id}`,
+        method: "DELETE",
+      }),
+      invalidatesTags: ["books"],
+    }),
+    getBookById: builder.query({
+      query: (_id) => `/${_id}`,
+    }),
   }),
 });
 
-export const { useGetAllBooksQuery, useAddBookMutation } = baseApi;
+export const {
+  useGetAllBooksQuery,
+  useGetBookByIdQuery,
+  useAddBookMutation,
+  useUpdateBookMutation,
+  useDeleteBookMutation,
+} = baseApi;
