@@ -9,4 +9,20 @@ export interface IBook {
   description?: string;
   copies: number;
   available: boolean;
-}
+};
+
+export interface IBorrowedBook {
+  book: {
+    title: string;
+    author: string;
+    isbn: string;
+  };
+  dueDate: string;
+  totalQuantity: number;
+};
+
+export type BorrowFormData = {
+  quantity: number;
+  dueDate: string;
+};
+
