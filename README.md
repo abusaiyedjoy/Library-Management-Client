@@ -1,50 +1,165 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 📚 Library Management Client
 
-Currently, two official plugins are available:
+This is the frontend for the **Library Management System** built with **React**, **Vite**, **TypeScript**, and **Tailwind CSS**. It allows users to browse, manage, and borrow books from a digital library.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 🔗 Live Site
 
-## Expanding the ESLint configuration
+➡️ [https://library-management-client.netlify.app](https://library-management-client.netlify.app)
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+---
 
-- Configure the top-level `parserOptions` property like this:
+## 🚀 Features
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+- View all books in the library
+- Add, edit, and delete books
+- Borrow books with quantity and due date
+- See borrowing summary and overdue status
+- Responsive UI using Tailwind CSS
+- API integration using **Redux Toolkit Query**
+- Type safety with **TypeScript**
+- Form validation using `react-hook-form`
+
+---
+
+## 🛠️ Tech Stack
+
+| Technology       | Description            |
+|------------------|------------------------|
+| React + Vite     | Frontend Framework     |
+| TypeScript       | Type-safe JavaScript   |
+| Tailwind CSS     | Utility-first styling  |
+| Redux Toolkit    | State & API handling   |
+| React Router     | Page navigation        |
+| React Hook Form  | Form handling/validation |
+
+---
+
+## 🧪 API Integration
+
+All APIs are powered by the server hosted on:
+
+🛠️ `https://assignment-3-library-management-chi.vercel.app`
+
+### Endpoints Used
+
+- `GET /api/books` – All books
+- `GET /api/books/:id` – Single book
+- `POST /api/books` – Add book
+- `PUT /api/books/:id` – Update book
+- `DELETE /api/books/:id` – Delete book
+- `POST /api/borrow` – Borrow a book
+- `GET /api/borrow` – Borrow summary
+
+---
+
+## 📦 Installation & Development
+
+```bash
+git clone [https://github.com/your-username/library-client.git](https://github.com/abusaiyedjoy/Library-Management-Client.git)
+cd Library-Management-Client
+npm install
+npm run dev
+````
+
+Make sure the server is also running or deployed for full functionality.
+
+---
+
+## 🙋 Author
+
+Developed by **Abu Saiyed Joy**
+*MERN Stack Developer*
+
+---
+
+
+
+| Technology       | Description                  |
+|------------------|------------------------------|
+| Express.js       | Web server framework         |
+| MongoDB          | NoSQL Database               |
+| Mongoose         | MongoDB ODM                  |
+| Zod              | Request validation           |
+| TypeScript       | Static typing                |
+| Vercel           | Deployment platform          |
+
+---
+
+## 📂 Project Structure
+
+````
+
+server/
+├── src/
+│   ├── controller/
+│   │   ├── Book.Controller.ts
+│   │   └── Borrow\.Controller.ts
+│   ├── model/
+│   │   ├── Book.Model.ts
+│   │   └── Borrow\.Model.ts
+│   ├── validation/
+│   │   └── ZodValidation.ts
+│   └── index.ts
+├── .env
+└── package.json
+
+````
+
+---
+
+## 🧪 API Endpoints
+
+### 📘 Books
+
+- `GET /api/books`
+- `GET /api/books/:id`
+- `POST /api/books`
+- `PUT /api/books/:id`
+- `DELETE /api/books/:id`
+
+### 📗 Borrow
+
+- `POST /api/borrow`
+- `GET /api/borrow`
+
+---
+
+## 🔐 Environment Variables
+
+Create a `.env` file in the root of the `server/`:
+
+```env
+PORT=3000
+MONGO_URI=mongodb+srv://<username>:<password>@cluster.mongodb.net/library-db
+````
+
+---
+
+## 🔧 Development Setup
+
+```bash
+git clone https://github.com/your-username/library-server.git
+cd server
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+---
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## ⚙️ Deployment
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+* The server is deployed on **Vercel**:
+  ➡️ [https://assignment-3-library-management-chi.vercel.app](https://assignment-3-library-management-chi.vercel.app)
+
+* CORS is configured to allow requests from:
+
+  * `http://localhost:5173`
+  * `https://library-management-client.netlify.app`
+
+---
+
+## 🙋 Author
+
+Developed by **Abu Saiyed Joy**
+*MERN Stack Developer*
